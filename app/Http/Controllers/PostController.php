@@ -1,83 +1,9 @@
-Git Repository
-	Git Download
-	Github Account
-	create new repository
-	Git set for the folder
-		git init // cmd on folder
-	set the origin
-		git remote add origin https://github.com/msi24562/Laravel-practice.git
-		git branch -M main
-	check branch
-		git branch
-	set the branch
-		git checkout -b main
-	To aad the changes on git for the changed file
-		git add .
-	Add comment for the change
-		git commit -m "Initial commit"
-	Push the File to repository
-		git push -u origin main
-
-
-
-Create Project
-	composer create-project --prefer-dist laravel/laravel project-name
-	cd project-name
-	php artisan serve
-
-	Set the env file for database connection
-
-	for model and migration
-		php artisan make:model Post -m
-
-	In Migration set the scema of table
-		public function up()
-		{
-			Schema::create('posts', function (Blueprint $table) {
-				$table->id();
-				$table->string('title');
-				$table->text('content');
-				$table->timestamps();
-			});
-		}
-
-	Migrate to db
-		php artisan migrate
-
-    Create Controllers
-        php artisan make:controller PostController --resource //Create controller with basic methods
-
-        index(): Show all posts.
-        create(): Show a form to create a post.
-        store(): Save a new post.
-        edit(): Show a form to edit a post.
-        update(): Update a post.
-        destroy(): Delete a post.
-
-
-    Create Blade Views
-        Create views in resources/views/posts:
-
-            index.blade.php - Display all posts.
-            create.blade.php - Form to create a new post.
-            edit.blade.php - Form to edit an existing post.
-            show.blade.php - Show details of a single post.
-
-
-	Define Routes on web.php
-		use App\Http\Controllers\PostController;  //Include Controllers
-		Route::resource('posts', PostController::class); //path to Routes
-
-
-
-    <!--POST Controller-->
-
 <?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;    every model use will add here
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -183,6 +109,3 @@ class PostController extends Controller
         return back();
     }
 }
-
-
-
