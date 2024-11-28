@@ -20,6 +20,23 @@ Git Repository
 
 
 
+for clone the project
+    git clone https://github.com/msi24562/Laravel-practice.git
+
+    For .env file
+        cp .env.example .env
+
+    Key generate and update in .env file
+        php artisan key:generate
+
+    Clear cache
+        php artisan config:clear
+
+
+if want to change the port to run
+    alias laravel-serve="php artisan serve --port=8080"
+
+
 Create Project
 	composer create-project --prefer-dist laravel/laravel project-name
 	cd project-name
@@ -67,6 +84,23 @@ Create Project
 	Define Routes on web.php
 		use App\Http\Controllers\PostController;  //Include Controllers
 		Route::resource('posts', PostController::class); //path to Routes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
